@@ -1,0 +1,13 @@
+
+
+data is stored as keyvalue. 
+    can come from many places.
+        read from tcp socket
+        read from json source
+widgets
+    progres up bar
+    bit lamp
+    pie charts
+    gauge
+    time widget
+color setup

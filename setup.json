@@ -1,0 +1,24 @@
+[
+    {
+        "_name": "my first str",
+        "_type": "string",
+        "_xpos": 10,
+        "_ypos": 20,
+        "_static": "hej"
+    },
+    {
+        "_name": "nr 2",
+        "_type": "string",
+        "_xpos": 40,
+        "_ypos": 40,
+        "_static": "mor"
+    },
+    {
+        "_name": "progress 1",
+        "_type": "progress",
+        "_xpos": 0,
+        "_ypos": 50,
+        "_width": 20,
+        "_datasource": "hest"
+    }
+]
