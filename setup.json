@@ -18,7 +18,14 @@
         "_type": "progress",
         "_xpos": 0,
         "_ypos": 50,
-        "_width": 20,
+        "_width": 60,
         "_datasource": "hest"
+    },
+    {
+        "_name": "string from ds",
+        "_type": "string",
+        "_xpos": 0,
+        "_ypos": 0,
+        "_datasource": "str1"
     }
 ]

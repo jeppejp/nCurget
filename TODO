@@ -1,9 +1,10 @@
 
 
-data is stored as keyvalue. 
-    can come from many places.
-        read from tcp socket
-        read from json source
+command interface
+    prefix with ::quit e.g.
+    add ::dumpdata to show every key->value
+in setup.json everything can come from datasource
+    prefix stuff with :: if it should be looked up in datastore
 widgets
     progres up bar
     bit lamp

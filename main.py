@@ -2,22 +2,28 @@
 import curses
 import json
 import widgets
-import datasource
+import datareceiver
 
 
 class NCurget:
     def __init__(self):
         self.created_widgets = []
         self.key = 0
-        self.datasource = datasource.Datasource()
+        self.datasource = datareceiver.ThreadedReceiver('127.0.0.1',9530)
+        self.datasource.start()
     def draw(self, stdscr):
         curses.curs_set(0)
+        curses.halfdelay(1)
 
         while self.key != 'q':
             for widget in self.created_widgets:
                 widget.draw(stdscr)
             stdscr.refresh()
-            self.key = stdscr.getkey()
+            try:
+                self.key = stdscr.getkey()
+            except:
+                pass
+        self.datasource.stop_receiver()
 
     def setup(self):
         """ Setup widgets based on config json """
