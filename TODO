@@ -1,8 +1,3 @@
-
-
-command interface
-    prefix with ::quit e.g.
-    add ::dumpdata to show every key->value
 in setup.json everything can come from datasource
     prefix stuff with :: if it should be looked up in datastore
 widgets
@@ -12,3 +7,12 @@ widgets
     gauge
     time widget
 color setup
+
+command line arguments
+
+test client
+
+wicked demo config
+    random generator or something from /proc etc.
+
+=== first release ===

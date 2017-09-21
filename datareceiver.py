@@ -35,8 +35,8 @@ class ThreadedReceiver(threading.Thread):
                 continue
             if not data:
                 break
-            if 'qqq' in data:
-                self._running = False
+            if data.strip()[:2] == "::":
+                conn.send(self._handle_cmd(data))
             else:
                 self._handle_data(data)
             conn.close()
@@ -57,6 +57,17 @@ class ThreadedReceiver(threading.Thread):
             except ValueError:
                 value = val
             self.set_value(key, value)
+    def _handle_cmd(self, data):
+        cmd = data.strip()
+        if cmd == "::quit":
+            self._running = False
+            return "OK"
+        elif cmd == "::dumpdata":
+            res = "All data:\n"
+            for key in self._datastore.keys():
+                res += str(key) + ": "+str(self._datastore[key])+"\n"
+            return res
+        return "Unknown command"
 
     def run(self):
         self._go_server()
